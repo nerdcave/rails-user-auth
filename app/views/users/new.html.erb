@@ -1,0 +1,24 @@
+<h1>Sign up</h1>
+
+<% if @users.try(:any?) %>
+	<ol>
+		<% @users.each do |u| %>
+		<li><%= u.email %></li>
+		<% end %>
+	</ol>
+<% end %>
+
+<%= form_for @user do |f| %>
+	<%= render 'shared/form_errors', object: f.object %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %>
+
+	<%= f.submit "Create account" %>
+<% end %>
