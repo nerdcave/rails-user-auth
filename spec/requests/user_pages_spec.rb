@@ -29,6 +29,11 @@ describe "UserPages" do
 				expect { click_button "Create" }.to change(User, :count).by(1)
 			end
 
+			it "should redirect to posts#index" do
+				click_button "Create"
+				current_path.should eq(posts_path)
+				should have_content("your posts")
+			end
 
 			it "should have sign out link" do
 				click_button "Create"

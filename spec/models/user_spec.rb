@@ -28,6 +28,8 @@ describe User do
 	it { should respond_to(:password_reset_token) }
 	it { should respond_to(:password_reset_sent_at) }
 
+	it { should respond_to(:posts) }
+
 	it { should be_valid }
 
 	describe "email field" do

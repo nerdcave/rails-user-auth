@@ -9,6 +9,7 @@ describe "SessionPages" do
 	end
 
 	describe "signing in" do
+
 		context "as valid user" do
 			let(:user) { FactoryGirl.create(:user) }
 			before do
@@ -17,12 +18,7 @@ describe "SessionPages" do
 				fill_in "Password", with: user.password
 			end
 
-			it "should login successfully" do
-				click_button "Sign in"
-				should have_content("Successfully")
-			end
-
-			describe "then signing out" do
+			context "then signing out" do
 				before do
 					click_button "Sign in"
 					click_link("Sign out")
@@ -34,10 +30,12 @@ describe "SessionPages" do
 				before do
 					find(:css, "input#remember_me").set(true)
 					click_button "Sign in"
+					#check cookie?
 				end
 
 				it { should have_link("Sign out") }
 			end
+
 		end
 
 
@@ -51,4 +49,21 @@ describe "SessionPages" do
 
 		end
 	end
+
+
+	describe "visiting secure page" do
+		let(:user) { FactoryGirl.create(:user) }
+		before do
+			visit new_post_path
+			fill_in "Email", with: user.email
+			fill_in "Password", with: user.password
+		end
+
+		it "should redirect to previous url upon signing in" do
+			click_button "Sign in"
+			#should have_content("Successfully")
+			current_path.should eq(new_post_path)
+		end
+	end
+
 end

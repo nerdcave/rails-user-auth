@@ -4,4 +4,10 @@ FactoryGirl.define do
 		password "secret"
 		password_confirmation { |u| u.password }
 	end
+
+	factory :post do
+		title = "Title post"
+		body = "Some long post body " * 10
+		user
+	end
 end

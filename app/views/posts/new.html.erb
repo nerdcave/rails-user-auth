@@ -1,0 +1,15 @@
+<h1>Create new post</h1>
+
+<%= form_for @post do |f| %>
+
+	<%= render 'shared/form_errors', object: f.object %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :body %>
+	<%= f.text_area :body %>
+
+	<%= f.submit "Create post" %>
+
+<% end %>

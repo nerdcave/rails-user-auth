@@ -1,0 +1,17 @@
+<h1>All your posts</h1>
+
+<%= link_to "Create New Post", new_post_path %>
+<% if @posts.any? %>
+
+<ul>
+<% @posts.each do |post|%>
+	<li>
+		<p><%= post.title %></p>
+		<p><%= post.body %></p>
+		<p><%= link_to "delete", post_path(post), method: :delete, data: { confirm: 'Sure?' } %></p>
+	</li>
+
+<% end %>
+</ul>
+
+<% end %>

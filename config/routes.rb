@@ -2,6 +2,7 @@ UserAuth::Application.routes.draw do
 	resources :users
 	resources :sessions, only: [:new, :create, :destroy]
 	resources :password_resets
+	resources :posts
 
 	get 'reset_password', to: 'password_resets#new'
 	get 'sign_up', to: 'users#new'

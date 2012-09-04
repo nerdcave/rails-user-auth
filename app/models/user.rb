@@ -24,6 +24,8 @@ class User < ActiveRecord::Base
 	before_save	{ email.downcase! }
 	before_create { generate_token(:auth_token) }
 
+	has_many :posts
+
 
 	def send_password_reset
 		generate_token(:password_reset_token)

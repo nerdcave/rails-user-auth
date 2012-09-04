@@ -20,4 +20,19 @@ module SessionsHelper
 		!current_user.nil?
 	end
 
+	def ensure_signed_in
+		unless signed_in?
+			session[:previous_url] = request.url
+			redirect_to sign_in_path, alert: "Sign in below"
+		end
+	end
+
+	def ensure_correct_user(user)
+		user == current_user
+	end
+
+	def redirect_to_previous_or(path, options = {})
+		redirect_to(session[:previous_url] || path, options)
+		session.delete(:previous_url)
+	end
 end

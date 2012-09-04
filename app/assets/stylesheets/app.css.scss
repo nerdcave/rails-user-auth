@@ -1,0 +1,22 @@
+form {
+	label {
+		display: block
+	}
+	label[for='remember_me'] {
+		display: inline
+	}
+
+	input {
+		display: block
+	}
+
+	input[type='checkbox'] {
+		display: inline
+	}
+}
+
+div.flash {
+	border: 1px solid orange;
+	background-color: #ffeeff;
+	padding: 5px;
+}
