@@ -3,10 +3,10 @@ UserAuth::Application.routes.draw do
 	resources :sessions, only: [:new, :create, :destroy]
 	resources :password_resets
 
-	match 'reset_password', to: 'password_resets#new'
-	match 'sign_up', to: 'users#new'
-	match 'sign_in', to: 'sessions#new'
-	match 'sign_out', to: 'sessions#destroy', via: :delete
+	get 'reset_password', to: 'password_resets#new'
+	get 'sign_up', to: 'users#new'
+	get 'sign_in', to: 'sessions#new'
+	delete 'sign_out', to: 'sessions#destroy'
 
 	root :to => 'users#new'
 

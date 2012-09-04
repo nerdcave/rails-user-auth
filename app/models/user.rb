@@ -21,8 +21,9 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { minimum: 6 }
 	validates :password_confirmation, presence: true
 
-	before_save { email.downcase! }
+	before_save	{ email.downcase! }
 	before_create { generate_token(:auth_token) }
+
 
 	def send_password_reset
 		generate_token(:password_reset_token)

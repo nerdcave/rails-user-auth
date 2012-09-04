@@ -1,11 +1,11 @@
 <h1>Sign up</h1>
 
 <% if @users.try(:any?) %>
-	<ol>
+	<ul>
 		<% @users.each do |u| %>
 		<li><%= u.email %></li>
 		<% end %>
-	</ol>
+	</ul>
 <% end %>
 
 <%= form_for @user do |f| %>
