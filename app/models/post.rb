@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
 	validates :body, presence: true
 	validates :user_id, presence: true
 
-	default_scope order: 'posts.created_at DESC'
+	#default_scope order: 'posts.created_at DESC'
 
 	belongs_to :user
 

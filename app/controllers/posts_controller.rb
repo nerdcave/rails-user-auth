@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	before_filter :ensure_signed_in
 
 	def index
-		@posts = current_user.posts
+		@posts = current_user.posts.order("created_at DESC")
 	end
 
 	def new

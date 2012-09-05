@@ -13,6 +13,10 @@ form {
 	input[type='checkbox'] {
 		display: inline
 	}
+
+	input[type='submit'] {
+		margin-top: 10px;
+	}
 }
 
 div.flash {
