@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
 	attr_accessible :email, :password, :password_confirmation
 
 	validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-	validates :password, presence: true, length: { minimum: 6 }
-	validates :password_confirmation, presence: true
+	validates :password, length: { minimum: 6 }
+	#validates :password_confirmation
 
 	before_save	{ email.downcase! }
 	before_create { generate_token(:auth_token) }
