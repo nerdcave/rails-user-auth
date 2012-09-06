@@ -12,7 +12,7 @@ describe "PasswordResets" do
 		context "when invalid" do
 			let(:unsaved_user) { FactoryGirl.build(:user) }
 			before do
-				fill_in "Email", with: unsaved_user.email
+				fill_in "E-mail", with: unsaved_user.email
 				click_button "Reset"
 			end
 
@@ -28,7 +28,7 @@ describe "PasswordResets" do
 		context "when valid" do
 			let(:user) { FactoryGirl.create(:user) }
 			before do
-				fill_in "Email", with: user.email
+				fill_in "E-mail", with: user.email
 				click_button "Reset"
 			end
 

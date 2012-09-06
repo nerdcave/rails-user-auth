@@ -14,7 +14,7 @@ describe "SessionPages" do
 			let(:user) { FactoryGirl.create(:user) }
 			before do
 				visit sign_in_path
-				fill_in "Email", with: user.email
+				fill_in "E-mail", with: user.email
 				fill_in "Password", with: user.password
 			end
 
@@ -55,7 +55,7 @@ describe "SessionPages" do
 		let(:user) { FactoryGirl.create(:user) }
 		before do
 			visit new_post_path
-			fill_in "Email", with: user.email
+			fill_in "E-mail", with: user.email
 			fill_in "Password", with: user.password
 		end
 

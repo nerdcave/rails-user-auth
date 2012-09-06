@@ -20,7 +20,7 @@ describe "UserPages" do
 		context "with valid fields" do
 			before do
 				visit register_path
-				fill_in "Email", with: "test@whatever.com"
+				fill_in "E-mail", with: "test@whatever.com"
 				fill_in "Password", with: "secret"
 				fill_in "confirmation", with: "secret"
 			end

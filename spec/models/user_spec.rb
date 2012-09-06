@@ -68,10 +68,10 @@ describe User do
 			it { should_not be_valid }
 		end
 
-		context "when confirmation is nil" do
-			before { user.password_confirmation = nil }
-			it { should_not be_valid }
-		end
+		# context "when confirmation is nil" do
+		# 	before { user.password_confirmation = nil }
+		# 	it { should_not be_valid }
+		# end
 	end
 
 	describe "password reset" do

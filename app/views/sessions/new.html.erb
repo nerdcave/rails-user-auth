@@ -3,7 +3,7 @@
 
 <%= form_tag sessions_path do %>
 
-	<%= label_tag :email %>
+	<%= label_tag :email, t('activerecord.attributes.user.email') %>
 	<%= text_field_tag :email %>
 
 	<%= label_tag :password %>
