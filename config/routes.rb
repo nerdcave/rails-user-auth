@@ -5,7 +5,7 @@ UserAuth::Application.routes.draw do
 	resources :posts
 
 	get 'reset_password', to: 'password_resets#new'
-	get 'sign_up', to: 'users#new'
+	get 'register', to: 'users#new'
 	get 'sign_in', to: 'sessions#new'
 	delete 'sign_out', to: 'sessions#destroy'
 
