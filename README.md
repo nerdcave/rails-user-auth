@@ -25,6 +25,7 @@ To get the app to send password reset emails properly, configure the **action_ma
 * Sign in/out user
 * 'Remember me' option for when the user closes the browser
 * Reset password
+* Shows how to display custom modal field names in the view (see **config/locales/en.yml**)
 
 ## Contact me
 Shoot me an email if you have any questions: <jay@nerdcave.com>
