@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20120904134133) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_digest"
@@ -31,5 +33,7 @@ ActiveRecord::Schema.define(:version => 20120904134133) do
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end
