@@ -17,6 +17,8 @@ No styling at all, but fully functional user login system.
 
 	rails s
 
+##Configuration
+To get the app to send password reset emails properly, configure the **action_mailer** options at the bottom of **config/environments/development.rb**.
 
 ## Features:
 * Register user
