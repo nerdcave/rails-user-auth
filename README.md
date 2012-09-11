@@ -1,7 +1,7 @@
-# Bare bones user auth in Rails 3
-No styling at all, but fully functional user login system.
+# Bare bones user auth in Rails 3.2
+No styling, just a fully functional user login system.
 
-## Installing
+### Installing
 
 	git clone git://github.com/nerdcave/rails3-user-auth.git
 	cd rails3-user-auth
@@ -9,24 +9,21 @@ No styling at all, but fully functional user login system.
 	rake db:migrate
 	rake test:prepare
 
-###Run the tests:
+### Run the tests
 
 	bundle exec rspec spec/
 
-###Run the app
+### Run the app
 
 	rails s
 
+## Features
+* Full RSpec tests with capybara (including request specs)
+* Register, sign in, and sign out user
+* Password authentication with has_secure_password
+* Demonstrates custom modal field names in the view (see **config/locales/en.yml**)
+* 'Remember me' option to persist session
+* Reset password implementation
+
 ##Configuration
 To get the app to send password reset emails properly, configure the **action_mailer** options at the bottom of **config/environments/development.rb**.
-
-## Features:
-* Register user
-* Sign in/out user
-* 'Remember me' option for when the user closes the browser
-* Reset password
-* Shows how to display custom modal field names in the view (see **config/locales/en.yml**)
-* Full RSpec tests with capybara (including request specs)
-
-## Contact me
-Shoot me an email if you have any questions: <jay@nerdcave.com>

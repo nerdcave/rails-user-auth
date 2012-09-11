@@ -18,7 +18,7 @@ class PasswordResetsController < ApplicationController
 		if @user.password_reset_expired?
 			redirect_to reset_password_path, alert: "Password reset expired"
 		elsif @user.update_attributes(params[:user])
-			redirect_to root_url, :notice => "Successfully reset password"
+			redirect_to root_url, notice: "Successfully reset password"
 		else
 			render :edit
 		end
