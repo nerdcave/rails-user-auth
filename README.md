@@ -4,7 +4,7 @@ No styling, just a fully functional user login system.
 ### Installing
 
 	git clone git://github.com/nerdcave/rails-user-auth.git
-	cd rails3-user-auth
+	cd rails-user-auth
 	bundle install
 	rake db:migrate
 	rake test:prepare
